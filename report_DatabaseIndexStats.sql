@@ -1,3 +1,8 @@
+-- Thanks to
+--     https://dataedo.com/kb/query/sql-server/list-all-indexes-in-the-database for the excellent index listing query
+--     https://stackoverflow.com/a/7892349/1964861 for size info
+--     https://dba.stackexchange.com/a/4287 for example recommendations
+
 create procedure report_DatabaseIndexStats as begin
 select i.[name] as index_name,
     substring(column_names, 1, len(column_names)-1) as [columns],
